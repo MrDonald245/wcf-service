@@ -7,22 +7,41 @@
       <xsd:import schemaLocation="http://10.2.15.33:8733/Design_Time_Addresses/Exam/KitchenService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Exam.Models" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IKitchenService_getAllDishes_InputMessage">
-    <wsdl:part name="parameters" element="tns:getAllDishes" />
+  <wsdl:message name="IKitchenService_GetAllDishes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDishes" />
   </wsdl:message>
-  <wsdl:message name="IKitchenService_getAllDishes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getAllDishesResponse" />
+  <wsdl:message name="IKitchenService_GetAllDishes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDishesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKitchenService_AddDish_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDish" />
+  </wsdl:message>
+  <wsdl:message name="IKitchenService_AddDish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDishResponse" />
   </wsdl:message>
   <wsdl:portType name="IKitchenService">
-    <wsdl:operation name="getAllDishes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IKitchenService/getAllDishes" message="tns:IKitchenService_getAllDishes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IKitchenService/getAllDishesResponse" message="tns:IKitchenService_getAllDishes_OutputMessage" />
+    <wsdl:operation name="GetAllDishes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKitchenService/GetAllDishes" message="tns:IKitchenService_GetAllDishes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKitchenService/GetAllDishesResponse" message="tns:IKitchenService_GetAllDishes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKitchenService/AddDish" message="tns:IKitchenService_AddDish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKitchenService/AddDishResponse" message="tns:IKitchenService_AddDish_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IKitchenService" type="tns:IKitchenService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="getAllDishes">
-      <soap:operation soapAction="http://tempuri.org/IKitchenService/getAllDishes" style="document" />
+    <wsdl:operation name="GetAllDishes">
+      <soap:operation soapAction="http://tempuri.org/IKitchenService/GetAllDishes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDish">
+      <soap:operation soapAction="http://tempuri.org/IKitchenService/AddDish" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

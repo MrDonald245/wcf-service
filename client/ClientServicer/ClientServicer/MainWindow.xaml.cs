@@ -34,14 +34,29 @@ namespace ClientServicer
         {
             try
             {
-                listDish.Clear();
-                listDish.AddRange(KSC.getAllDishes());
+                listDish.Clear();    
+                listDish.AddRange(KSC.GetAllDishes());
                 LpMain.ItemsSource = listDish;
+
             }
             catch
             {
                 MessageBox.Show("Ошибка соиденения с сервером");
             }
+
+        }
+
+        private void LpMain_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListView;
+
+
+
+
+            //  if (item != null && item.IsSelected)
+            //    {
+                    MessageBox.Show("fobia");
+            //    }
 
         }
     }
